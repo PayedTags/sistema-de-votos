@@ -1,0 +1,31 @@
+.obrigado-logo{
+    position: absolute;
+    left:4.25vw;
+    top: 1.813vh;
+}
+
+.obrigado-resize{
+    width: 60vw;
+    height: auto;
+}
+
+.obrigado-texto{
+    position: absolute;
+    top:55%;
+    left: 35%;
+    align-self: center;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.obrigado-butao{
+    top:80%;
+    left: 39%;
+    position: absolute;
+    width: 24vw;
+    height: 10vh;
+    color: white;
+    background: #006600;
+    border-radius: 1.563rem;
+    font-size: 2rem;
+}

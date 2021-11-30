@@ -3,11 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { DAppProvider, Config } from '@usedapp/core';
+import { getNetworkId } from "./config/config";
+
+
+
+function GetConfig():Config
+{
+  return {supportedChains: [getNetworkId()]}; 
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <DAppProvider config={GetConfig()}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </DAppProvider>,
   document.getElementById('root')
 );
 

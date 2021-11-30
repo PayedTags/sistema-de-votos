@@ -1,0 +1,1 @@
+export const voteSystemContract = "0x799ADf1B3a88469bC18CDe7fFa9FA3E35ccfAa53";

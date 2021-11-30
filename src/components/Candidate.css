@@ -1,0 +1,71 @@
+.candidato-logo{
+    position: absolute;
+    left:4.25vw;
+    top: 3.813vh;
+}
+
+.candidato-resize{
+    width: 40vw;
+    height: auto;
+}
+
+.candidato-conteudo{
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    width: 100vw;
+}
+
+.candidato-text{
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.candidato-fotos{
+    position: absolute;
+    top: 52%;
+    padding-left: 10rem;
+}
+
+.candidato-nomes{
+    position: absolute;
+    top: 70%;
+    padding-left: 9rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.candidato-whitespace{
+    padding-right: 3.1rem;
+}
+
+.candidato-exemplo{
+    height: 10rem;
+    padding-right: 5rem;
+    width: 10rem;
+}
+
+.candidato-botao{
+    position: absolute;
+    color: white;
+    top: 80vh;
+    left: 38vw;
+    width: 25vw;
+    height: 10vh;
+    background: #006600;
+    border-radius: 1.563rem;
+    font-size: 2rem;
+
+}
+
+.candidato-carousel{
+    margin-left: 32vw;
+    margin-right: 28vw;
+}
+
+.candidato-carouselItem{
+    margin-left: 2rem;
+    height: 10rem;
+    width: 10rem;
+}
+

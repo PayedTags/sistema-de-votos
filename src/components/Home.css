@@ -1,0 +1,101 @@
+.home-logo{
+    position: absolute;
+    left:4.25vw;
+    top: 3.813vh;
+}
+
+.home-botao{
+    position: absolute;
+    color: white;
+    top: 47.75vh;
+    left: 24.813vw;
+    width: 18.75vw;
+    height: 7vh;
+    background: #006600;
+    border-radius: 1.563rem;
+    font-size: 2rem;
+
+}
+
+.home-direita{
+    position: absolute;
+    top:3.813vh;
+    right: 18.063vw;
+}
+
+.home-posicao{
+    font-size: 3.063rem;
+    font-weight: bold;
+}
+
+.home-blocovotos{
+    padding-bottom: 2vh;
+}
+
+.home-exemplo{
+    height: 69px;
+    width: 69px;
+}
+
+.home-bloconome{
+    position: absolute;
+    white-space: pre;
+    font-weight: bold;
+    font-size: 24px;
+    padding-left: 1vw;
+}
+
+.home-blocovoto{
+    white-space: pre;
+    position: relative;
+    bottom: 2vh;
+    font-size: 20px;
+    padding-left: 1vw;
+}
+
+.home-fotos{
+    position: absolute;
+    top: 72%;
+    padding-left: 15rem;
+}
+
+.home-nomes{
+    position: absolute;
+    top: 87%;
+    padding-left: 14rem;
+    font-size: 1.166rem;
+    font-weight: bold;
+}
+
+.home-whitespace{
+    padding-right: 3.1rem;
+}
+
+.home-exemplo2{
+    height: 8rem;
+    width: 8rem;
+    padding-right: 5rem;
+}
+
+.home-conteudo{
+    position: absolute;
+    text-align: center;
+    top: 65%;
+    width: 100vw;
+}
+
+.home-text{
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.home-carousel{
+    margin-left: 32vw;
+    margin-right: 28vw;
+}
+
+.home-carouselItem{
+    margin-left: 2rem;
+    height: 10rem;
+    width: 10rem;
+}

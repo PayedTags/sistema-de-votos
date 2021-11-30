@@ -1,0 +1,22 @@
+.administration-title{
+    margin:auto;
+    text-align: center;
+    width: 50%;
+    font-size: 48px;
+    padding-bottom: 10vh;
+    padding-top: 3vh;
+}
+
+.administration-label{
+    padding-left: 3vw;
+    padding-bottom: 8vh;
+    font-size: 48px;
+}
+
+.administration-textbox{
+    border: 3px solid #000;
+    font-size: 48px;
+    height: 6.25vh;
+    width: 42.5vw;
+    border-radius: 1.875rem;
+}

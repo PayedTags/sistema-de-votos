@@ -1,0 +1,43 @@
+.numero-logo{
+    position: absolute;
+    left:4.25vw;
+    top: 3.813vh;
+}
+
+.numero-resize{
+    width: 40vw;
+    height: auto;
+}
+
+.numero-conteudo{
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    width: 100vw;
+}
+
+.numero-texto{
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.numero-input{
+    width: 50vw;
+    height: 10vh;
+    border-radius: 2rem;
+    box-sizing: border-box;
+    border-width: 0.5rem;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.numero-button{
+    width: 18.75vw;
+    height: 7vh;
+    color: white;
+    background: #006600;
+    border-radius: 1.563rem;
+    font-size: 2rem;
+}
+
+
