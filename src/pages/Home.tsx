@@ -23,15 +23,21 @@ import {
   useEthers,
 } from "@usedapp/core";
 import { formatEther } from "@ethersproject/units";
+import { UseContractMethod, UseGetCandidates } from "../contracts/hooks/voteSystemFunctions";
 
 export default function Home() {
 
-  const candidates: ICandidateItem[] =[{name: "Tiago", imageLink: "exemplo"}, {name: "David", imageLink: "abc"}]
+  //const candidates: ICandidateItem[] =[{name: "Tiago", imageLink: "exemplo"}, {name: "David", imageLink: "abc"}]
   const { activateBrowserWallet, account } = useEthers();
   const etherBalance = useEtherBalance(account);
   const [newVisibilityState, setNewVisibilityState] = useState(true);
 
+  //region contract functions
+  let candidates = UseGetCandidates();
+  //endregion
+
   let visibilityState: boolean = true;
+  console.log(candidates);
 
 
   //botao conectar
@@ -143,8 +149,10 @@ export default function Home() {
       </Text>
 
       <Box className="home-carousel">
-        <CandidateList items={candidates}/>
+        {//<CandidateList items={}/>
+}
       </Box>
+      test: 
       {account && <p color="white">Account: {account}</p>}
       {etherBalance && <p color="white">Balance: {formatEther(etherBalance)} </p>}
     </div>

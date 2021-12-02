@@ -15,7 +15,7 @@ export function UseContractMethod(methodName: string) {
 export function UseGetCandidates() {
   return (
     useContractCall({
-      abi: voteSystemContractAbi,
+      abi: voteSystemInterface,
       address: voteSystemContract,
       method: "getCandidates",
       args: [],
