@@ -1,8 +1,10 @@
 import { Text, Image } from "@chakra-ui/react";
+import "./Candidate.css";
 
 export interface ICandidateItem{
     name:string,
-    imageLink:string
+    imageLink:string,
+    voteCount:number
 }
 
 export default function CandidateItem(props:ICandidateItem){

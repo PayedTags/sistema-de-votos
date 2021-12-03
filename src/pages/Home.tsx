@@ -14,8 +14,8 @@ import exemplo from "../components/exemplo.png";
 import { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "../components/Home.css";
-import CandidateList from "../components/CandidateList";
-import {ICandidateItem} from "../components/CandidateItem";
+import CandidateList, {ICandidateList} from "../components/CandidateList";
+import CandidateItem, {ICandidateItem} from "../components/CandidateItem";
 import {
   ChainId,
   DAppProvider,
@@ -24,6 +24,8 @@ import {
 } from "@usedapp/core";
 import { formatEther } from "@ethersproject/units";
 import { UseContractMethod, UseGetCandidates } from "../contracts/hooks/voteSystemFunctions";
+import { Console } from "console";
+
 
 export default function Home() {
 
@@ -32,12 +34,35 @@ export default function Home() {
   const etherBalance = useEtherBalance(account);
   const [newVisibilityState, setNewVisibilityState] = useState(true);
 
+
   //region contract functions
   let candidates = UseGetCandidates();
-  //endregion
+  let candidatesArray: ICandidateItem[] = [];
+  let candidateList: ICandidateList = {items: []};
+  let topCandidates: ICandidateItem[] = [{name: "a", imageLink: "", voteCount: 0}, {name: "b", imageLink: "", voteCount: 0}, {name: "c", imageLink: "", voteCount: 0}, {name: "d", imageLink: "", voteCount: 0}]; 
 
+
+  if(candidates[0] != undefined)
+  {
+    for(let i: number = 0; i < candidates[0].length; i++)
+    {
+      if(candidates[0][i] != undefined)
+      {
+        let temp: ICandidateItem = {name: candidates[0][i].name, imageLink: candidates[0][i].imageLink, voteCount: candidates[0][i].voteCount}
+        candidatesArray.push(temp);
+      }
+    }
+    candidateList.items = [{name: "teste1", imageLink: "a", voteCount: 4}, {name: "teste2", imageLink: "b", voteCount: 3}, {name: "teste3", imageLink: "c", voteCount: 30}, {name: "teste4", imageLink: "d", voteCount: 12}, ];
+    candidatesArray= candidateList.items;
+    console.log(topCandidates);
+    CheckTopCandidates();
+  }
+    //candidateList = [{name: candidates[0][0], imageLink: candidates[0]}]
+    
+    //candidateList = candidates[0].map((candidate: any[]) => { return {name: candidate[0], imageLink: candidate[1], voteCount: parseFloat(formatEther(candidate[2])).toFixed(0)}});
+
+  //endregion
   let visibilityState: boolean = true;
-  console.log(candidates);
 
 
   //botao conectar
@@ -45,7 +70,6 @@ export default function Home() {
     return(
       account != null ? null : activateBrowserWallet()
     )
-    
   }
 
   function OnClickEventHandler(){
@@ -53,7 +77,42 @@ export default function Home() {
     if(account != null)
     { 
       setNewVisibilityState(false);
+
     }
+  }
+
+  function CheckTopCandidates(){
+    if(candidatesArray[0].name != "" )
+    {
+      for(let i: number = 0;i < candidatesArray.length; i++)
+      {
+        let x: number = 3;
+        do{
+          console.log(candidatesArray[i].voteCount + ">" + topCandidates[x].voteCount + "?");
+          if(candidatesArray[i].voteCount > topCandidates[x].voteCount)
+          {
+            x--;
+            console.log(topCandidates);
+            console.log(x);
+          }
+          else
+            x = -10;
+        }while(x > 0)
+  
+        if(x != -10)
+          UpdateTopCandidates(i, x);
+      }
+    }
+  }
+
+  function UpdateTopCandidates(index: number, position: number){
+    for(let x: number = 3; x > position; x--)
+    {
+      console.log(topCandidates)
+      topCandidates[x] = topCandidates[x - 1];
+    } 
+    console.log("teste");
+    topCandidates[position] = candidatesArray[index];
   }
 
   return (
@@ -149,8 +208,7 @@ export default function Home() {
       </Text>
 
       <Box className="home-carousel">
-        {//<CandidateList items={}/>
-}
+        <CandidateList items={candidateList.items}/>
       </Box>
       test: 
       {account && <p color="white">Account: {account}</p>}

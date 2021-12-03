@@ -5,12 +5,16 @@ import "../components/Candidate.css";
 import logotipo from "../components/logo.png";
 import { Carousel } from "react-responsive-carousel";
 import exemplo from "../components/exemplo.png";
-import CandidateList, { ICandidateList } from "../components/CandidateList";
+
+
+
+
+import CandidateList from "../components/CandidateList";
 import {ICandidateItem} from "../components/CandidateItem";
 
 export default function Candidato() {
 
-  const candidates: ICandidateItem[] =[{name: "Tiago", imageLink: "exemplo"}, {name: "Jessica", imageLink: "abc"}]
+  //const candidates: ICandidateItem[] =[{name: "Tiago", imageLink: "exemplo"}, {name: "Jessica", imageLink: "abc"}]
   return (
     <div>
       <Image
@@ -33,7 +37,8 @@ export default function Candidato() {
 
 
       <Box className="candidato-carousel">
-        <CandidateList items={candidates}/>
+        {//<CandidateList items={candidates}/>
+}
       </Box>
 
       <Flex display="flex" justifyContent="center" alignSelf="center" marginTop="10vh" marginBottom="10vh">

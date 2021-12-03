@@ -13,7 +13,7 @@ export default function CandidateList(props: ICandidateList) {
           centerSlidePercentage={35}
           infiniteLoop={true}>
         {props.items.map((item) => {
-          return <CandidateItem name={item.name} imageLink={item.imageLink} />;
+          return <CandidateItem name={item.name} imageLink={item.imageLink} voteCount={item.voteCount} />;
         })}
       </Carousel>
     </>
